@@ -1,1 +1,21 @@
-<h1>this a speciic users</h1>
+<div class='user-container'>
+  <div class='user-detail'>
+      <%= image_tag @user.photo %>
+      <div class='user-detail-info'>
+          <h2><%= @user.name %></h2>
+          <p>Number of Posts: <span><%= @user.posts_counter %></span></p>
+      </div>
+  </div>
+  <div class='user-info'>
+      <p><%= @user.bio %></p>
+     <div class='user-posts'>
+         <h2>Posts</h2>
+         <% @user.three_recent_posts.each do |post| %>
+             <div class='post'>
+                 <h3><%= post.title %></h3>
+                 <p><%= post.text %></p>
+             </div>
+         <% end %>
+     </div>
+     <button>See all posts</button>
+</div>
