@@ -15,8 +15,8 @@
         <h3><%= post.title %></h3>
         <p><%= post.text %></p>
         <div class='post-info'>
-          <p>Comments: <span><%= post.comments_counter || 0 %></span></p>
-          <p>Likes: <span><%= post.likes_counter || 0 %></span></p>
+          <p>Comments: <span><%= post.commentsCounter || 0 %></span></p>
+          <p>Likes: <span><%= post.likesCounter || 0 %></span></p>
         </div>
         <div class='post-comments'>
           <% post.five_recent_comments.each do |comment| %>

@@ -5,7 +5,7 @@
     <%= image_tag user.photo if user.photo.present? %>
     <div class='user-info'>
      <h2><%= sanitize user.name %></h2>
-     <p>Number of Posts: <span><%= user.posts_counter || 0 %></span></p>
+     <p>Number of Posts: <span><%= user.postsCounter || 0 %></span></p>
     </div> 
     </div>
   <% end %>
