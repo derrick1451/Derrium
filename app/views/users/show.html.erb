@@ -3,14 +3,14 @@
       <%= image_tag @user.photo %>
       <div class='user-detail-info'>
           <h2><%= @user.name %></h2>
-          <p>Number of Posts: <span><%= @user.postsCounter %></span></p>
+          <p>Number of Posts: <span><%= @user.posts_counter %></span></p>
       </div>
   </div>
   <div class='user-info'>
       <p><%= @user.bio %></p>
      <div class='user-posts'>
          <h2>Posts</h2>
-         <% @user.threeRecentPosts.each do |post| %>
+         <% @user.three_recent_posts.each do |post| %>
              <div class='post'>
                  <h3><%= post.title %></h3>
                  <p><%= post.text %></p>
