@@ -1,1 +1,32 @@
-<h1>these are my user posts</h1>
+<div class='posts-container'>
+  <div class='posts-owner'>
+    <div class='user'>
+      <%= image_tag @user.photo if @user.photo.present? %>
+      <div class='user-info'>
+        <h2><%= sanitize @user.name %></h2>
+        <p>Number of Posts: <span><%= @user.postsCounter || 0 %></span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class='posts'>
+    <% @posts.each do |post| %>
+      <div class='post'>
+        <h3><%= post.title %></h3>
+        <p><%= post.text %></p>
+        <div class='post-info'>
+          <p>Comments: <span><%= post.commentsCounter || 0 %></span></p>
+          <p>Likes: <span><%= post.likesCounter || 0 %></span></p>
+        </div>
+        <div class='post-comments'>
+          <% post.fiveRecentComments.each do |comment| %>
+            <div class='comment'>
+              <p><%= comment.user.name %></p>
+              <p><%= comment.text %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

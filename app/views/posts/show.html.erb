@@ -1,1 +1,18 @@
-<h1>details 4  a specific posts</h1>
+<div class='post-container'>
+<div class='post-header'>
+<p>post by: <%= @post.user.name %></p>
+<div class="post-analytic">
+<p>likes: <%= @post.likesCounter %></p>
+<p>comments: <%= @post.commentsCounter %></p>
+</div>
+<p><%= @post.text%></p>
+</div>
+<div class='post-comments'>
+<% @post.comments.each do |comment| %>
+  <div class='comment'>
+    <p><%= sanitize comment.user.name %></p>
+    <p><%= comment.text %></p>
+  </div>
+<% end %>
+</div>
+</div>
