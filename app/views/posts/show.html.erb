@@ -6,6 +6,7 @@
 <p>comments: <%= @post.commentsCounter %></p>
 </div>
 <p><%= @post.text%></p>
+ <%= button_to "Like", user_post_likes_path(@post.user, @post) , method: :post %>
 </div>
 <div class='post-comments'>
 <% @post.comments.each do |comment| %>
